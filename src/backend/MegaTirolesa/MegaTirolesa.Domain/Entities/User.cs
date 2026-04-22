@@ -2,6 +2,7 @@
 {
     public class User : BaseEntity
     {
+        protected User() { }
         public User(string name, string email, string cpf, string phoneNumber, DateTime birthDate, double weight, string country, string state, string city)
             : base()
         {
@@ -14,6 +15,8 @@
             Country = country;
             State = state;
             City = city;
+
+            Appointments = [];
         }
 
         public string Name { get; set; } = string.Empty;
@@ -25,5 +28,7 @@
         public string Country { get; set; } = string.Empty;
         public string State { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
+
+        public List<Appointment> Appointments { get; set; }
     }
 }
