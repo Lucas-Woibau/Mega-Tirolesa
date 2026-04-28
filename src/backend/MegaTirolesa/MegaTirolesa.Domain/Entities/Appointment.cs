@@ -5,19 +5,23 @@ namespace MegaTirolesa.Domain.Entities
     public class Appointment : BaseEntity
     {
         protected Appointment() { }
-        public Appointment(Guid idUser, User user, DateTime appointmentDate)
+        public Appointment(Guid idUser, DateTime appointmentDate)
             : base()
         {
             IdUser = idUser;
-            User = user;
             AppointmentDate = appointmentDate;
 
             Status = AppointmentStatus.Confirmed;
         }
 
-        public Guid IdUser { get; set; }
-        public User User { get; set; }
-        public DateTime AppointmentDate { get; set; }
-        public AppointmentStatus Status { get; set; }
+        public Guid IdUser { get; private set; }
+        public User User { get; private set; }
+        public DateTime AppointmentDate { get; private set; }
+        public AppointmentStatus Status { get; private set; }
+
+        public void Update(DateTime appointmentDate)
+        {
+            AppointmentDate = appointmentDate;
+        }
     }
 }

@@ -3,7 +3,7 @@
     <Project Path="MegaTirolesa.Application/MegaTirolesa.Application.csproj" />
     <Project Path="MegaTirolesa.Domain/MegaTirolesa.Domain.csproj" />
     <Project Path="MegaTirolesa.Infrastructure/MegaTirolesa.Infrastructure.csproj" />
-    <Project Path="MegaTirolesa/MegaTirolesa.API.csproj" />
+    <Project Path="MegaTirolesa.API/MegaTirolesa.API.csproj" />
   </Folder>
   <Folder Name="/tests/" />
 </Solution>
