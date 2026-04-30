@@ -1,7 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
+﻿using MegaTirolesa.Application.Repositories;
 using MegaTirolesa.Infrastructure.Persistence;
+using MegaTirolesa.Infrastructure.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace MegaTirolesa.Infrastructure
 {
@@ -12,7 +14,8 @@ namespace MegaTirolesa.Infrastructure
             public IServiceCollection AddInfrastructure(IConfiguration configuration)
             {
                 services
-                    .AddData(configuration);
+                    .AddData(configuration)
+                    .AddRepositories();
 
                 return services;
             }
@@ -24,7 +27,14 @@ namespace MegaTirolesa.Infrastructure
 
                 return services;
             }
-        }
 
+            private IServiceCollection AddRepositories()
+            {
+                services.AddScoped<IUserRepository, UserRepository>();
+                services.AddScoped<IAppointmentRepository, AppointmentRepository>();
+
+                return services;
+            }
+        }
     }
 }

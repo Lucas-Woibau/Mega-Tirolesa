@@ -11,13 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Queries\AppointmentQueries\GetAllAppointmentQuery\" />
-    <Folder Include="Queries\AppointmentQueries\GetAppointmentByIdQuery\" />
-    <Folder Include="Queries\UserQueries\GetAllUsersQuery\" />
-    <Folder Include="Queries\UserQueries\GetUserByIdQuery\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="FluentValidation" Version="12.1.1" />
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.7" />

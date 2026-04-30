@@ -1,5 +1,7 @@
 ﻿using MegaTirolesa.Application.Common;
+using MegaTirolesa.Application.FluentValidation.AppointmentValidator;
 using Microsoft.Extensions.DependencyInjection;
+using FluentValidation;
 
 namespace MegaTirolesa.Application
 {
@@ -10,7 +12,8 @@ namespace MegaTirolesa.Application
             public IServiceCollection AddApplication()
             {
                 services
-                    .AddHandlers();
+                    .AddHandlers()
+                    .AddValidation();
 
                 return services;
             }
@@ -25,6 +28,14 @@ namespace MegaTirolesa.Application
                         .AsImplementedInterfaces()
                         .WithTransientLifetime()
                 );
+
+                return services;
+            }
+
+            private IServiceCollection AddValidation()
+            {
+                services
+                    .AddValidatorsFromAssemblyContaining<CreateAppointmentValidator>();
 
                 return services;
             }
