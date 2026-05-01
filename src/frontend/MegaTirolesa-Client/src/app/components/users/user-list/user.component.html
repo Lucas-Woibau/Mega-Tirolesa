@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>E-mail</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (user of users; track user.id) {
+      <tr>
+        <td class="truncate" [title]="user.name">
+          {{ user.name }}
+        </td>
+
+        <td class="truncate" [title]="user.email">
+          {{ user.email }}
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
