@@ -52,6 +52,7 @@ namespace MegaTirolesa.Infrastructure.Persistence.Repositories
             if (appointment == null)
                 return;
 
+            _context.Update(appointment);
             appointment.SetAsDeleted();
 
             await _context.SaveChangesAsync();

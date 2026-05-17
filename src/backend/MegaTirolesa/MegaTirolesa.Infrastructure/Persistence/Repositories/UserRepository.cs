@@ -52,6 +52,7 @@ namespace MegaTirolesa.Infrastructure.Persistence.Repositories
             if (user == null)
                 return;
 
+            _context.Update(user);
             user.SetAsDeleted();
 
             await _context.SaveChangesAsync();
